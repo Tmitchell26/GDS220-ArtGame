@@ -29,14 +29,14 @@ public class CharController : MonoBehaviour
     IEnumerator startPump()
     {
         animator.SetBool("Pump", true);
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(.7f);
         animator.SetBool("Pump", false);
     }
 
     IEnumerator startBreath()
     {
         animator.SetBool("Breath", true);
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(.7f);
         animator.SetBool("Breath", false);
     }
 }

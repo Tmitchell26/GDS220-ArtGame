@@ -13,9 +13,14 @@ public class Timer : MonoBehaviour
     public float gameTimer;
     public GameObject speech;
 
+
+    public AudioSource crying;
+    public AudioSource music;
+
     // Start is called before the first frame update
     void Start()
     {
+        music.Play();
         StartCoroutine(startTimer());
     }
 
@@ -34,11 +39,14 @@ public class Timer : MonoBehaviour
         {
             medic.SetBool("Medic", true);
             yield return new WaitForSeconds(3f);
+            music.Stop();
             speech.SetActive(true);
             yield return new WaitForSeconds(3f);
 
             francine.SetBool("Crying", true);
+            crying.Play();
             yield return new WaitForSeconds(6f);
+            crying.Stop();
             SceneManager.LoadScene("EndGame");
         }
     }
